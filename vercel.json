@@ -1,12 +1,21 @@
 {
-  "version": 2,
-  "name": "botchat",
-  "alias": ["Botchat"],
-  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
-  "routes": [{
-    "headers": {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-    },
-    "src": "/.*", "dest": "app.js" }
-  ]
+    "version": 2,
+    "name": "petgram-TU_NOMBRE",
+    "builds": [
+        { "use": "@vercel/static-build", "src": "package.json"}
+    ],
+    "routes": [
+        {
+            "src": "(.*).js",
+            "dest": "/$1.js"            
+        },
+        {
+            "src": "(.*).json",
+            "dest": "/$1.json"            
+        },
+        {
+            "src": "/.*",
+            "dest": "index.html"
+        }
+    ]
+} 
