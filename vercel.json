@@ -1,10 +1,13 @@
 {
-   "version": 2,
-   "name": "autoshare",
-   "builds": [
-      { "src": "app.js", "use": "@vercel/node" }
-   ],
-   "routes": [
-      { "src": "/(.*)", "dest": "/app.js" }
-   ]
-}
+  "version": 2,
+  "name": "botchat",
+  "alias": ["Botchat"],
+  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
+  "routes": [{
+    "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+    },
+    "src": "/.*", "dest": "app.js" }
+  ]
