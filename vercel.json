@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "petgram-TU_NOMBRE",
+    "name": "botchat",
     "builds": [
         { "use": "@vercel/static-build", "src": "package.json"}
     ],
@@ -13,9 +13,5 @@
             "src": "(.*).json",
             "dest": "/$1.json"            
         },
-        {
-            "src": "/.*",
-            "dest": "index.html"
-        }
     ]
 } 
